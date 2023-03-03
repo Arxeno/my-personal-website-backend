@@ -1,0 +1,15 @@
+{
+  "name": "my-personal-website-backend",
+  "version": "4.0.0",
+  "description": "Backend for my personal website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raisyam",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0"
+  }
+}
