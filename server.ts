@@ -1,13 +1,12 @@
 import express, { Application, Request, Response } from 'express';
 import mongoose from 'mongoose';
 import CONFIG from './config';
+import Skill from './models/Skill';
 
 const app: Application = express();
 
 const PORT: number = CONFIG.PORT;
 const { MONGODB_URI, MONGODB_DATABASE } = CONFIG;
-
-app.get('/skills', (req, res) => {});
 
 // MONGODB
 // STARTING MONGODB
@@ -20,3 +19,9 @@ mongoose
     app.listen(PORT, () => console.log(`Server port: ${PORT}`));
   })
   .catch((err) => console.log(err));
+
+// EXPRESS API ROUTES
+app.get('/skills', async (req: Request, res: Response) => {
+  const result = await Skill.find({});
+  res.json(result);
+});
