@@ -4,8 +4,12 @@ import CONFIG from './config';
 import Skill from './models/Skill';
 import Service from './models/Service';
 import Project from './models/Project';
+import cors from 'cors';
+import path from 'path';
 
 const app: Application = express();
+app.use(cors());
+app.use(express.static(path.join(__dirname, 'public')));
 
 const PORT: number = CONFIG.PORT;
 const { MONGODB_URI, MONGODB_DATABASE } = CONFIG;
