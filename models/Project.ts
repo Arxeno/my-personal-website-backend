@@ -11,6 +11,7 @@ interface IProject {
   websiteLink: string;
   image: string;
   colors: string[];
+  fontColor: null | string;
   isGradient: boolean;
   description: string;
   technologies: Technology[];
