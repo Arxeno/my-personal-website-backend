@@ -39,5 +39,9 @@ app.get('/services', async (req: Request, res: Response) => {
 
 app.get('/projects', async (req: Request, res: Response) => {
   const result = await Project.find({});
-  res.json(result);
+  if (req.query.numberOfProject) {
+    res.json(result.slice(0, Number(req.query.numberOfProject)));
+  } else {
+    res.json(result);
+  }
 });
